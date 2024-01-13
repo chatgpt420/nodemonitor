@@ -1,6 +1,6 @@
 import os
 import json
-from mail import email
+from functions import email
 
 def alert(message):
     email(f'{os.popen("hostname").read()} closed ports have been found:',

@@ -1,6 +1,6 @@
 import psutil
 import time
-from mail import email
+from functions import email
 import os
 
 cpuList = []
