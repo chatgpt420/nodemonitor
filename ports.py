@@ -1,6 +1,6 @@
 import os
 import json
-from functions import email
+from functions import email,log
 
 def alert(message):
     email(f'{os.popen("hostname").read()} closed ports have been found:',
@@ -34,6 +34,7 @@ def portTest():
     # Craft an email message which contains the IP of any closed ports
     email_body = ''
     for item in ipList:
+        log('ports',f'port closed on {item}')
         if ipList[item] == 'CLOSED':
             email_body = email_body+ f"{item}\n"
 
