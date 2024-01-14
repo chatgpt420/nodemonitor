@@ -3,6 +3,7 @@ import os
 filename = 'credentials.py'
 
 cwd = os.getcwd()
+debug = cwd'/debug.log'
 fullpath = f"{cwd}/{filename}"
 response = input(f"""
                  
@@ -18,7 +19,7 @@ Would you like to continue? (y/n): """)
 if response != 'y':
     exit()
 
-debug = cwd'/debug.log'
+
 recipient = input("Enter the receiving address for Email alerts: ")
 sender = input("Enter the Email address used to log into the SMTP server: ")
 password = input("Enter the Password used to log into the SMTP server: ")
@@ -34,6 +35,7 @@ sender_email = '{sender}'
 sender_password = '{password}'
 sender_mailserver = '{mailserver}'
 sender_port = '{port}'
+debug = '{debug}
 
 """)
         
