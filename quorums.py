@@ -51,7 +51,7 @@ try:
         
         
 
-        sleep(20)
+        sleep(10)
 
 except Exception as E:
     log('quorums',E)
