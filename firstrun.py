@@ -3,7 +3,7 @@ import os
 filename = 'credentials.py'
 
 cwd = os.getcwd()
-debug = cwd'/debug.log'
+debug = f"{cwd}/debug.log"
 fullpath = f"{cwd}/{filename}"
 response = input(f"""
                  
