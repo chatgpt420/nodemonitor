@@ -43,3 +43,8 @@ try:
         # Send an email alert only if the message body isn't empty
         if len(email_body) > 0:
             alert(email_body)
+
+except Exception as E:
+    log('ports',E)
+except KeyboardInterrupt:
+    print("Bye!")
