@@ -35,7 +35,7 @@ sender_email = '{sender}'
 sender_password = '{password}'
 sender_mailserver = '{mailserver}'
 sender_port = '{port}'
-debug = '{debug}
+debug = '{debug}'
 
 """)
         
