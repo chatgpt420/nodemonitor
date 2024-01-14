@@ -4,6 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from credentials import *
 from datetime import datetime
+from credentials import debug
 
 def email(subject,body):
     try:
@@ -32,7 +33,7 @@ def log(script,message):
     # datetime object containing current date and time
     now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
-    with open("debug.log","r") as l:
+    with open(debug,"r") as l:
         l.write(f"{now} - {script} - {message}")
 
 
