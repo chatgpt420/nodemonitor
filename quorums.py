@@ -54,4 +54,4 @@ while True:
     except Exception as E:
         log('quorums',E)
     except KeyboardInterrupt:
-        print("Bye!")
+        break
