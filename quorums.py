@@ -6,18 +6,18 @@ from time import sleep
 from functions import log
 
 
-try:
-    node = []
-    for root,dirs,files in os.walk("/home", topdown=False):
-        if 'debug.log' in files:
-            tag = [x for x in root.split('/') if x not in ['home','.dashcore','.','']]
-            node.append([tag[0],root+'/debug.log'])
 
-    for x in node:
-        print(x)
+node = []
+for root,dirs,files in os.walk("/home", topdown=False):
+    if 'debug.log' in files:
+        tag = [x for x in root.split('/') if x not in ['home','.dashcore','.','']]
+        node.append([tag[0],root+'/debug.log'])
 
-    while True:
+for x in node:
+    print(x)
 
+while True:
+    try:
         url = 'https://chainz.cryptoid.info/dash/'
         data = r.get(url).text
         soup = BeautifulSoup(data,'html.parser')
@@ -48,12 +48,12 @@ try:
         print(f"llmq_100_67  -  {llmq_100_67}")
         print(f"llmq_400_60  -  {llmq_400_60}")
         print('---')
-        
-        
 
         sleep(10)
 
-except Exception as E:
-    log('quorums',E)
-except KeyboardInterrupt:
-    print("Bye!")
+    except IndexError:
+        pass
+    except Exception as E:
+        log('quorums',E)
+    except KeyboardInterrupt:
+        print("Bye!")
