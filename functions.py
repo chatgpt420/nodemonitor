@@ -33,7 +33,7 @@ def log(script,message):
     now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
     with open(debug,"a") as l:
-        l.write(f"{now} - {script} - {message}")
+        l.write(f"\n{now} - {script} - {message}")
 
 
         
