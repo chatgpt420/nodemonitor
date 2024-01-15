@@ -51,8 +51,6 @@ while True:
 
         sleep(10)
 
-    except IndexError:
-        pass
     except Exception as E:
         log('quorums',E)
     except KeyboardInterrupt:

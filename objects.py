@@ -90,15 +90,17 @@ class Quorums:
 
                 # Splitting log string into list, then grabbing elements of
                 # the list and splitting off remaining unecessary text
-                manip = results[-1].split('[')
-                endNum = int(manip[2].split(']')[0])
-                activeHeight = int(manip[1].split(']')[0])
+                if len(results) > 0:
+                        manip = results[-1].split('[')
+                        endNum = int(manip[2].split(']')[0])
+                        activeHeight = int(manip[1].split(']')[0])
                 
-                if activeHeight < blockHeight and endNum == 31:
-                        Quorums.llmq_60_75_status = False
-                elif activeHeight == self.blockHeight and endNum != 31:
-                        Quorums.llmq_60_75_status = True
-                        
+                        if activeHeight < blockHeight and endNum == 31:
+                                Quorums.llmq_60_75_status = False
+                        elif activeHeight == self.blockHeight and endNum != 31:
+                                Quorums.llmq_60_75_status = True
+                else:
+                        Quorums.llmq_60_75_status = False                        
 
 
                 results = []
@@ -107,14 +109,17 @@ class Quorums:
                                 results.append(line)
                 # Splitting log string into list, then grabbing elements of
                 # the list and splitting off remaining unecessary text
-                manip = results[-1].split('[')
-                endNum = int(manip[2].split(']')[0])
-                activeHeight = int(manip[1].split(']')[0])
+                if len(results) > 0:
+                        manip = results[-1].split('[')
+                        endNum = int(manip[2].split(']')[0])
+                        activeHeight = int(manip[1].split(']')[0])
 
-                if activeHeight < self.blockHeight:
+                        if activeHeight < self.blockHeight:
+                                Quorums.llmq_100_67_status = False
+                        elif activeHeight == self.blockHeight:
+                                Quorums.llmq_100_67_status = True
+                else:
                         Quorums.llmq_100_67_status = False
-                elif activeHeight == self.blockHeight:
-                        Quorums.llmq_100_67_status = True
                 
 
 
@@ -124,11 +129,14 @@ class Quorums:
                                 results.append(line)
                 # Splitting log string into list, then grabbing elements of
                 # the list and splitting off remaining unecessary text
-                manip = results[-1].split('[')
-                endNum = int(manip[2].split(']')[0])
-                activeHeight = int(manip[1].split(']')[0])
+                if len(results) > 0:
+                        manip = results[-1].split('[')
+                        endNum = int(manip[2].split(']')[0])
+                        activeHeight = int(manip[1].split(']')[0])
 
-                if activeHeight < self.blockHeight:
+                        if activeHeight < self.blockHeight:
+                                Quorums.llmq_400_60_status = False
+                        elif activeHeight >= self.blockHeight:
+                                Quorums.llmq_400_60_status = True
+                else:
                         Quorums.llmq_400_60_status = False
-                elif activeHeight >= self.blockHeight:
-                        Quorums.llmq_400_60_status = True
