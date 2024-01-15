@@ -35,8 +35,8 @@ try:
         # Craft an email message which contains the IP of any closed ports
         email_body = ''
         for item in ipList:
-            log('ports',f'port closed on {item}')
             if ipList[item] == 'CLOSED':
+                log('ports',f'port closed on {item}')
                 email_body = email_body+ f"{item}\n"
 
 
